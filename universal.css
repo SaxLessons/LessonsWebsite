@@ -1,0 +1,306 @@
+/* Website theme code made by Kevin Powell; 
+info about him at https://www.kevinpowell.co/newsletter/ */
+
+/* setting variable*/
+:root {
+    --clr-body-bg: hsl(0 0% 90%);
+    --clr-card-bg: hsl(0 0% 100%);
+    --clr-text: hsl(0 0% 15%);
+    --clr-heading: hsl(0, 0%, 25%);
+    --cardLength: 75%;
+    --clr-link: hsl(240, 100%, 50%);
+    --clr-link-visited: hsl(300, 100%, 25%);
+}
+
+/* Set theme colors */
+.green {
+    --clr-body-bg: hsl(110, 49%, 90%);
+    --clr-card-bg: hsl(109 50% 100%);
+    --clr-text: hsl(109 50% 15%);
+    --clr-heading: hsl(109 50% 25%);
+    --clr-link: hsl(240, 100%, 50%);
+    --clr-link-visited: hsl(62, 100%, 15%);
+}
+
+.dark {
+    --clr-body-bg: hsl(209 50% 10%);
+    --clr-card-bg: hsl(209 50% 5%);
+    --clr-text: hsl(209 50% 90%);
+    --clr-heading: hsl(209 50% 80%);
+    --clr-link: hsl(0, 0%, 100%);
+    --clr-link-visited: hsl(209, 100%, 85%);
+}
+
+:root:has(#green:checked) {
+    --clr-body-bg: hsl(109 50% 90%);
+    --clr-card-bg: hsl(109 50% 100%);
+    --clr-text: hsl(109 50% 15%);
+    --clr-heading: hsl(109 50% 25%);
+    --clr-link: hsl(240, 100%, 50%);
+    --clr-link-visited: hsl(61, 100%, 15%);
+}
+
+:root:has(#dark:checked) {
+    --clr-body-bg: hsl(209, 49%, 10%);
+    --clr-card-bg: hsl(209 50% 5%);
+    --clr-text: hsl(209 50% 90%);
+    --clr-heading: hsl(209 50% 80%);
+    --clr-link: hsl(0, 0%, 100%);
+    --clr-link-visited: hsl(209, 100%, 85%);
+}
+
+/* Theme selector style and logic */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.color-picker > fieldset {
+    border: 0;
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    background: #fff;
+    padding: 1rem 3rem;
+    margin-inline: auto;
+    border-radius: 0 0 1rem 1rem;
+}
+  
+.color-picker input[type="radio"] {
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    outline: 3px solid var(--radio-color, currentColor);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+
+.color-picker input[type="radio"]:checked {
+    background-color: var(--radio-color);
+}
+
+.color-picker input[type="radio"]#light {
+    --radio-color: gray;
+}
+.color-picker input[type="radio"]#green {
+    --radio-color: green;
+}
+.color-picker input[type="radio"]#dark {
+    --radio-color: #232323;
+}
+
+/* CSS Reseter */
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    font-size: 16px;
+}
+
+/* change start */
+body {
+    color: var(--clr-text);
+    background-color: var(--clr-body-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--clr-heading)
+}
+
+/* card creation for visual segmentation */
+.card {
+    padding: 1rem;
+    background-color: var(--clr-card-bg);
+    border-block-start: 0.5rem solid;
+    border-radius: 0.5rem;
+    position: relative;
+    width: var(--cardLength);
+    max-width: var(--cardLength);
+    align-items: center;
+    left: 10%;
+}
+
+.headerText {
+    text-align: center;
+    font-size: 5rem;
+}
+
+#topScroll {
+    padding: 1rem;
+    color: var(--clr-heading);
+    background-color: var(--clr-card-bg);
+    position: fixed;
+    width: max-content;
+    align-items: center;
+    right: 3%;
+    bottom: 2.5%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    font-size: 2rem;
+}
+
+#topScroll:hover, #topScroll:focus {
+    border: 0.125rem solid #fff;
+}
+
+/* sets all of the header within the top of the screen and in even columns */
+header {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 5em;
+    justify-content: space-evenly;
+}
+
+/* Style the navigation menu */
+.navbar {
+    background-color: var(--clr-card-bg);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+}
+  
+/* Navigation links */
+.navbar a {
+    float: left;
+    color: var(--clr-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    width: 8rem;
+    padding: 1.18rem;
+    text-align: center;
+}
+
+/* Add a background color on mouse-over */
+.navbar a:hover {
+    background-color: var(--clr-text);
+    color: var(--clr-card-bg);
+}
+
+/* Style the current/active link */
+.navbar a.active {
+    background-color: var(--clr-text);
+    color: var(--clr-card-bg);
+}
+
+.icon {
+    display: none;
+}
+
+.websiteLogo {
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+}
+
+.navText {
+    padding-top: 0.13rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    background-color: var(--clr-card-bg);
+    padding: 1rem;
+}
+
+.forcePadding {
+    padding: 2rem;
+}
+
+.intextLink{
+    color: var(--clr-link);
+}
+
+.intextLink:visited{
+    color: var(--clr-link-visited);
+}
+
+/* Style the radio buttons when focused */
+.color-picker input[type="radio"]:focus {
+    outline: 0.25rem solid var(--clr-heading); /* Blue outline around the focused radio button */
+    outline-offset: 0.25rem; /* Space between the outline and the radio button */
+}
+
+.color-picker fieldset:focus-within {
+    border: 0.25rem solid var(--clr-heading); /* Blue border around the fieldset */
+    padding: 2rem; /* Adjust padding if necessary */
+}
+
+/* Add responsiveness for mobile screens */
+@media screen and (max-width: 770px) {
+    /* makes the navigation buttons appaear on click of the hamburger menu */
+    /* Style the navigation menu */
+    .navbar {
+        overflow: hidden;
+        background-color: var(--clr-card-bg);
+        position: relative;
+        display: block;
+        text-align: left;
+        padding-right: 0%;
+    }
+  
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .navbar #myLinks {
+        display: none;
+    }
+    
+    /* Style navigation menu links */
+    .navbar a {
+        color: var(--clr-text);
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+    
+    /* Style the hamburger menu */
+    a.icon {
+        background: var(--clr-card-bg);
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 0.45rem 1rem;
+    }
+    
+    /* Add a grey background color on mouse-over */
+    .navbar a:hover {
+        background-color: var(--clr-text);
+        color: var(--clr-card-bg);
+    }
+    
+    /* Style the active link (or home/logo) */
+    .active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    /* chanes the sizes of various elements */    
+    footer {
+        padding: 0.5rem;
+    }
+
+    .headerText {
+        font-size: 3rem;
+    }
+}
+
+/* debugging */
+/* * {
+    outline: 1px solid red;
+} */

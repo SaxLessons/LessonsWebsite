@@ -1,0 +1,56 @@
+/* CSS Reseter */
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+/* Sets up the images and text to be displayed properly */
+.homeCollage {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
+    max-width: fit-content;
+    padding: 3rem;
+    animation: 2s ease-in 1 forwards running slidein;
+}
+
+/* sets the conditions of the images */
+.selfImage {
+    height: 104.125%; /* 2x the size with same picture ratio */
+    max-height: min-content;
+    width: 51.625%; /* 2x the size with same picture ratio */
+    max-width: min-content;
+    background-size: contain;
+    flex-shrink: 0;
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0%;
+        left: 0%;
+    }
+
+    to {
+        opacity: 100%;
+        left: 30%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .homeCollage {
+        float: none;
+        display: block;
+        position: relative;
+        left: 15%;
+        overflow: hidden;
+        align-items: left;
+    }
+
+    .selfImage {
+        height: 166.6%;
+        width: 82.6%;
+    }
+}

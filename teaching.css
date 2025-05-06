@@ -1,0 +1,60 @@
+/* CSS Reseter */
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+/* card creation for visual segmentation */
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    left: 1rem;
+    overflow: hidden;
+    justify-content: space-evenly;
+    width: 96%
+}
+
+.flexbox div {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardSegment {
+    display: flex;
+    width: calc(var(--cardLength) - 41%);
+    max-width: fit-content;
+}
+
+.reducedCard {
+    padding-bottom: 0.5rem;
+    background-color: var(--clr-card-bg);
+    border-block-start: 0.5rem solid;
+    border-radius: 0.5rem;
+    position: relative;
+    text-align: center;
+}
+
+div p {
+    position: relative;
+    left: 0.25rem;
+}
+
+/* Added for better mobile experience */
+@media screen and (max-width: 770px) {
+    .flexbox {
+        display: block;
+        width: 90%;
+        left: 6%
+    }
+    
+    .cardSegment {
+        display: block;
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+}

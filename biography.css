@@ -1,0 +1,28 @@
+/* CSS Reseter */
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.bioText {
+    width: 79%;
+    position: relative;
+    left: 10%;
+    line-height: 2rem;
+}
+
+.imageCarousel {
+    /* placeholder until feature is actually added */
+    width: 50%;
+    max-width: 50%;
+    height: 20%;
+    max-height: 20%;
+    background-color: yellow;
+    color: black;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    left: 24%;
+}
